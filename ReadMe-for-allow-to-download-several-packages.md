@@ -11,3 +11,10 @@
 ### Execute Windows-PowerShell as a 'Administrator-Rights'.
 
 Search ```Windows PowerShell``` and execute as a  ```Administrator-Rights```.
+
+
+### Determine what permissions can be set with 'get-help set-ExecutionPoliy'.
+
+```
+get-help set-ExecutionPolicy
+```
