@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "tensor-jsApp"
+    }
+  },
+  "defaultProject": "tensor-jsApp",
+  "cli": {
+    "analytics": false
+  }
 }
