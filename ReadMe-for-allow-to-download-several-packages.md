@@ -25,3 +25,7 @@ get-help set-ExecutionPolicy
 ```
 Set-ExecutionPolicy RemoteSigned
 ```
+
+So you can solve your problem that you cannot install required modules in ```VSCode Terminal```.
+
+Make sure you have to type ```ng``` before you execute this project.
