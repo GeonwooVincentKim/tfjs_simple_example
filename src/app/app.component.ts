@@ -9,6 +9,8 @@ import * as tf from '@tensorflow/tfjs';
 })
 
 // First of all, let just test this codes.
-export class AppComponent {
-  title = 'tensor-jsApp';
+export class AppComponent implements OnInit {
+  ngOnInit(){
+    
+  }
 }
