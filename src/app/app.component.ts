@@ -5,6 +5,8 @@ import { Component } from '@angular/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
+
+// First of all, let just test this codes.
 export class AppComponent {
   title = 'tensor-jsApp';
 }
