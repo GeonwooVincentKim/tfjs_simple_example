@@ -29,3 +29,14 @@ Set-ExecutionPolicy RemoteSigned
 So you can solve your problem that you cannot install required modules in ```VSCode Terminal```.
 
 Make sure you have to type ```ng``` before you execute this project.
+
+
+
+
+## Futher Information of allows to download several required packages from visual studio code.
+
+You can search further information about how to allows to download modules that are required in your project which is using 'Visual Studio Code'.
+
+```
+https://singa-korean.tistory.com/21
+```
