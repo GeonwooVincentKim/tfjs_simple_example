@@ -18,3 +18,10 @@ Search ```Windows PowerShell``` and execute as a  ```Administrator-Rights```.
 ```
 get-help set-ExecutionPolicy
 ```
+
+
+### Set Policy with 'Set-ExecutionPolicy RemoteSigned'.
+
+```
+Set-ExecutionPolicy RemoteSigned
+```
