@@ -10,11 +10,4 @@
 
 ### Execute Windows-PowerShell as a 'Administrator-Rights'.
 
-Search 
-```
-Windows PowerShell
-```
-and execute as a 
-```
-Administrator-Rights
-```.
+Search ```Windows PowerShell``` and execute as a  ```Administrator-Rights```.
