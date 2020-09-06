@@ -1,4 +1,4 @@
-# What does 'Tensorflow.js' function and methods stands for? What do they do?
+# What does `Tensorflow.js` function and methods stands for? What do they do?
 
 - 1. This is a project template for [introducing-Tensorflow.js.]
 - 2. This project template will let you know about what does ```Tensorflow.js``` stands for and
@@ -6,10 +6,10 @@
 
 
 
-## Process of introduce 'Tensorflow.js' and apply to your own project.
+## Process of introduce `Tensorflow.js` and apply to your own project.
 
 
-### Asynchronous function, 'trainNewModel' 
+### Asynchronous function, `trainNewModel` 
 
 Set up an ```asynchronous function```, called ```trainNewModel```.
 
