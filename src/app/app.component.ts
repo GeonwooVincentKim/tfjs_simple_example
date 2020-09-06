@@ -23,7 +23,7 @@ export class AppComponent implements OnInit {
   model: tf.ModelCompileArgs;
   predictions: any;
 
-  @ViewChild(DrawableDirective) canvas;
+  // @ViewChild(DrawableDirective) canvas;
 
   ngOnInit(){
     this.trainNewModel();
@@ -80,7 +80,7 @@ export class AppComponent implements OnInit {
       // img = tf.cast(img, 'float32');
 
       // Make and format the predications
-      // const output = this.linearModel.predict(img) as any;
+      // const output = this.model.predict(img) as any;
 
       // Save predictions on the component
       // this.prediction = Array.from(output.dataSync()); 
