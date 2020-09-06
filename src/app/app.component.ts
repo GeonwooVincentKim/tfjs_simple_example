@@ -41,10 +41,18 @@ export class AppComponent implements OnInit {
     console.log("Model-Trained");
   }
 
-  // Calling 'Linear-Model-fit' with our 'x' and' 'y' data.
-  // It's a statisical-Model that can predict values
-  // based on this DataSet.
+  /*
+    - 1. Calling 'Linear-Model-fit' with our 'x' and' 'y' data.
+    - 2. It's a statisical-Model that can predict values
+    based on this DataSet that've we've provided.
+    - 3. To make a prediction, we'll call 'Linear-Model' predict,
+    then pass on the value in the form of a Tensor.
+  */
   linearPrediction(val){
-
+    // return a prediction in the form of a tensor.
+    const output = this.linearModel.predict(tf.tensor2d([val], [1, 1])) as any;
+    
+    // Create an array and then call 'dataSync' on the tensor.
+    this.prediction = Array.from(output.dataSync())[0];
   }
 }
