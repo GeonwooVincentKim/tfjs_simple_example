@@ -10,6 +10,11 @@ import * as tf from '@tensorflow/tfjs';
 
 // First of all, let just test this codes.
 export class AppComponent implements OnInit {
+  // Setting up a property called Linear-Model that
+  // defines the actual Tesnor-Model that will train and 
+  // make predictions.
+  linearModel: tf.Sequential;
+
   ngOnInit(){
     
   }
