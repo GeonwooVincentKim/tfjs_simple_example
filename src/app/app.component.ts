@@ -20,7 +20,7 @@ export class AppComponent implements OnInit {
   // training some randomly generated static data.
   prediction: any;  
 
-  model: tf.ModelTensorInfo;
+  model: tf.ModelCompileArgs;
   predictions: any;
 
   @ViewChild(DrawableDirective) canvas;
