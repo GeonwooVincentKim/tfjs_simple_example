@@ -49,8 +49,11 @@ export class AppComponent implements OnInit {
     then pass on the value in the form of a Tensor.
   */
   linearPrediction(val){
+    console.log("Testing..");
     // return a prediction in the form of a tensor.
-    const output = this.linearModel.predict(tf.tensor2d(parseInt[val], [1, 1])) as any;
+    // Why the program has top when I set the value as '3'? But it doesn't occur any error..!! 
+    // Why parameter, 'val' does not working??
+    const output = this.linearModel.predict(tf.tensor2d([3], [1, 1])) as any;
     // Create an array and then call 'dataSync' on the tensor.
     this.prediction = Array.from(output.dataSync())[0]
   }
