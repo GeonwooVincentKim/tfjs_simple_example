@@ -41,6 +41,11 @@ export class AppComponent implements OnInit {
     console.log("Model-Trained");
   }
 
+  predict(val: number) {
+    const output = this.linearModel.predict(tf.tensor2d([val], [1, 1])) as any;
+    this.prediction = Array.from(output.dataSync())[0]
+  }
+
   /*
     - 1. Calling 'Linear-Model-fit' with our 'x' and' 'y' data.
     - 2. It's a statisical-Model that can predict values
@@ -50,6 +55,7 @@ export class AppComponent implements OnInit {
   */
   linearPrediction(val){
     console.log("Testing..");
+    console.log(val, " ", typeof(val));
     // return a prediction in the form of a tensor.
     // Why the program has top when I set the value as '3'? But it doesn't occur any error..!! 
     // Why parameter, 'val' does not working??
