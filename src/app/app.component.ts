@@ -5,7 +5,7 @@ import * as tf from '@tensorflow/tfjs';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.scss']
 })
 
 // First of all, let just test this codes.
