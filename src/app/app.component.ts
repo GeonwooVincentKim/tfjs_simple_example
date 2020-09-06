@@ -1,4 +1,5 @@
 import { Component, ViewChild, OnInit } from '@angular/core';
+import { DrawableDirective } from './drawable.directive';
 import '@angular/compiler';
 
 import * as tf from '@tensorflow/tfjs';
@@ -18,6 +19,11 @@ export class AppComponent implements OnInit {
 
   // training some randomly generated static data.
   prediction: any;  
+
+  model: tf.ModelTensorInfo;
+  predictions: any;
+
+  @ViewChild(DrawableDirective) canvas;
 
   ngOnInit(){
     this.trainNewModel();
@@ -61,7 +67,7 @@ export class AppComponent implements OnInit {
   }
 
   async loadModel() {
-    this.linearModel = await tf.loadModel('/assets/model.json');
+    // this.linearModel = await tf.loadModel('/assets/model.json');
   }
 
   async predict(imageData: ImageData) {
@@ -69,15 +75,15 @@ export class AppComponent implements OnInit {
     const pred = await tf.tidy(() => {
 
       // Convert the canvas pixels to 
-      let img = tf.fromPixels(imageData, 1);
-      img = img.reshape([1, 28, 28, 1]);
-      img = tf.cast(img, 'float32');
+      // let img = tf.fromPixels(imageData, 1);
+      // img = img.reshape([1, 28, 28, 1]);
+      // img = tf.cast(img, 'float32');
 
       // Make and format the predications
-      const output = this.linearModel.predict(img) as any;
+      // const output = this.linearModel.predict(img) as any;
 
       // Save predictions on the component
-      this.prediction = Array.from(output.dataSync()); 
+      // this.prediction = Array.from(output.dataSync()); 
     });
 
   }
