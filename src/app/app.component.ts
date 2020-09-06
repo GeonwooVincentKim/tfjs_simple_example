@@ -38,9 +38,9 @@ export class AppComponent implements OnInit {
     
     // Train
     // Get a ML-Algorithm to predict, 
-    // depending on the size of the
-    // Data-Set training the model can take a long-time, but
-    // it just have few values.
+    // depending on the size of the Data-Set training the model 
+    // can take a long-time, but it just have few values,
+    // so it's going to happen very quick.
     await this.linearModel.fit(xs, ys);
     console.log("Model-Trained");
   }
