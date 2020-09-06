@@ -37,11 +37,14 @@ export class AppComponent implements OnInit {
     const ys = tf.tensor1d([1.6, 2.7, 2.9, 3.19, 1.684, 2.53, 3.366, 2.596, 2.53, 1.22, 2.81]);
     
     // Train
-    // Get a ML-Algorithm to predict, 
-    // depending on the size of the Data-Set training the model 
-    // can take a long-time, but it just have few values,
-    // so it's going to happen very quick.
     await this.linearModel.fit(xs, ys);
     console.log("Model-Trained");
+  }
+
+  // Calling 'Linear-Model-fit' with our 'x' and' 'y' data.
+  // It's a statisical-Model that can predict values
+  // based on this DataSet.
+  linearPrediction(val){
+
   }
 }
