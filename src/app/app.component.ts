@@ -15,7 +15,20 @@ export class AppComponent implements OnInit {
   // make predictions.
   linearModel: tf.Sequential;
 
+  // training some randomly generated static data.
+  prediction: any;  
+
   ngOnInit(){
-    
+    this.trainNewModel();
+  }
+  
+  /* 
+    1. Set up an asynchronous function, 
+    called 'trainNewModel'.
+
+    2. Define a Model for Linear-Regression.
+  */
+  async trainNewModel(){
+    this.linearModel = tf.sequential();
   }
 }
