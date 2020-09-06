@@ -35,6 +35,13 @@ export class AppComponent implements OnInit {
     // ys -> The label for 'xs'-DataSet data.
     const xs = tf.tensor1d([3.2, 4.4, 5.5, 6.71, 6.98, 7.168, 9.779, 6.182, 7.59, 2.16, 7.04]); // --> One-Dimensional
     const ys = tf.tensor1d([1.6, 2.7, 2.9, 3.19, 1.684, 2.53, 3.366, 2.596, 2.53, 1.22, 2.81]);
-
+    
+    // Train
+    // Get a ML-Algorithm to predict, 
+    // depending on the size of the
+    // Data-Set training the model can take a long-time, but
+    // it just have few values.
+    await this.linearModel.fit(xs, ys);
+    console.log("Model-Trained");
   }
 }
