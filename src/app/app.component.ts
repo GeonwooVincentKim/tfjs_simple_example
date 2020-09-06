@@ -1,4 +1,5 @@
 import { Component, ViewChild, OnInit } from '@angular/core';
+import '@angular/compiler';
 
 import * as tf from '@tensorflow/tfjs';
 
@@ -41,11 +42,6 @@ export class AppComponent implements OnInit {
     console.log("Model-Trained");
   }
 
-  predict(val: number) {
-    const output = this.linearModel.predict(tf.tensor2d([val], [1, 1])) as any;
-    this.prediction = Array.from(output.dataSync())[0]
-  }
-
   /*
     - 1. Calling 'Linear-Model-fit' with our 'x' and' 'y' data.
     - 2. It's a statisical-Model that can predict values
@@ -63,4 +59,58 @@ export class AppComponent implements OnInit {
     // Create an array and then call 'dataSync' on the tensor.
     this.prediction = Array.from(output.dataSync())[0]
   }
+
+  async loadModel() {
+    this.linearModel = await tf.loadModel('/assets/model.json');
+  }
+
+  async predict(imageData: ImageData) {
+
+    const pred = await tf.tidy(() => {
+
+      // Convert the canvas pixels to 
+      let img = tf.fromPixels(imageData, 1);
+      img = img.reshape([1, 28, 28, 1]);
+      img = tf.cast(img, 'float32');
+
+      // Make and format the predications
+      const output = this.linearModel.predict(img) as any;
+
+      // Save predictions on the component
+      this.prediction = Array.from(output.dataSync()); 
+    });
+
+  }
 }
+
+
+// export class AppComponent {
+
+//   trained: false;
+//   xValues: [1,2,3,4,5,6];
+//   yValues: [1,3,5,7,9,11];
+//   predictedValue:'Click on train';
+//   valueToPredict: '';
+//   addItem() {
+//     this.xValues.push(0);
+//     this.yValues.push(0);
+//   }
+//   train() {
+//     // Define a model for linear regression.
+//     const model = this.model = tf.sequential();
+//     model.add(tf.layers.dense({units: 1, inputShape: [1]}));
+//     // Prepare the model for training: Specify the loss and the optimizer.
+//     model.compile({loss: 'meanSquaredError', optimizer: 'sgd'});
+//     const xs = tf.tensor2d(this.xValues, [this.xValues.length, 1]);
+//     const ys = tf.tensor2d(this.yValues, [this.yValues.length, 1]);
+//     // Train the model using the data.
+//     model.fit(xs, ys, {epochs: 50}).then(() => {
+//       this.trained = true;
+//       this.predictedValue = 'Ready for making predictions';
+//     });
+//   }
+//   predict() {
+//     // Use the model to do inference on a data point the model hasn't seen before:
+//     this.predictedValue = this.model.predict(tf.tensor2d([this.valueToPredict], [1, 1])).get(0, 0);
+//   }
+// }

@@ -6,12 +6,12 @@
             <canvas drawable (newImage)="predict($event)"></canvas><br>
         </div>
 
-        <!-- <button class="btn btn-sm btn-warning" (click)="canvas.clear()">Erase</button> -->
+        <button class="btn btn-sm btn-warning" (click)="canvas.clear()">Erase</button>
 
     </div>
     <div class="col-sm">
         <h3>TensorFlow Prediction</h3>
-        <!-- <chart [data]="predictions"></chart> -->
+        <chart [data]="predictions"></chart>
     </div>
   </div>
 </div>
@@ -29,7 +29,7 @@
         
           <hr>
         
-          <input type="number" (change)="linearPrediction($event.target.value)" class="form-control" placeholder="enter any random numbner">
+          <input type="number" (change)="predict($event.target.value)" class="form-control" placeholder="enter any random numbner">
       </div>
     </div>
   </div>
@@ -39,3 +39,25 @@
 
 
 <router-outlet></router-outlet>
+
+<!-- <div v-for="(item, index) in xValues" v-bind:key="index">
+  <div>
+
+    <div class="col-sm-1">
+      <input class="field field-x" v-model="xValues[index]" type="number">
+      <input class="field field-y" v-model="yValues[index]" type="number">
+    </div>
+</div>
+</div>
+
+<button class="button-add-example button--green" v-on:click="addItem">Add Value</button>
+<button class="button-train button--green" v-on:click="train">Train</button>
+
+<div class="predict-controls">
+<h2 class="section col-sm-1">Predicting</h2>
+<input class="field element" v-model="valueToPredict" type="number" placeholder="Enter a number"><br>
+<div class="element" {predictedValue}></div>
+<button class="element button--green" v-on:click="predict" :disabled="!trained">Predict</button>
+</div>
+
+<router-outlet></router-outlet> -->
