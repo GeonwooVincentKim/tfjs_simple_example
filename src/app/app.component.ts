@@ -26,13 +26,16 @@ export class AppComponent implements OnInit {
     1. Set up an asynchronous function, 
     called 'trainNewModel'.
 
-    2. Define a Model for Linear-Regression.
-    3. Adding a Dense-Layer or a fully connected Layer
+    2. Adding a Dense-Layer or a fully connected Layer
     that will output a shape of one and also take 
-    an input with a shape on 
+    an input with a shape one. 
   */
   async trainNewModel(){
+    // Define a Model for Linear-Regression.
     this.linearModel = tf.sequential();
     this.linearModel.add(tf.layers.dense({units: 1, inputShape: [1]}));
+  
+    // Prepare the model for training: Specify the loss and the optimizer.
+    this.linearModel.compile({loss: 'meanSquaredError', optimizer: 'sgd'});
   }
 }
